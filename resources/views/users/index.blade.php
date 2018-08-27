@@ -16,14 +16,16 @@
 
 	<div class="row">
     @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-      <p>{{ $message }}</p>
-    </div>
+        <div class="col-lg-12 margin-tb">
+            <div class="alert alert-success">
+                <p>{{ $message }}</p>
+            </div>
+        </div>
     @endif
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-12 margin-tb">
             <table class="table table-bordered">
              <tr>
                <th>No</th>

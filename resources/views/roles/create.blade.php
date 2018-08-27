@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -37,12 +38,15 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Permission:</strong>
-            <br/>
+            <div class="row">
             @foreach($permission as $value)
+                <div class="col-xs-12 col-sm-6 col-md-4">
                 <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
                 {{ $value->name }}</label>
+                </div>
             <br/>
             @endforeach
+            </div>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -50,6 +54,6 @@
     </div>
 </div>
 {!! Form::close() !!}
-
+</div>
 
 @endsection
