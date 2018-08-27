@@ -16,8 +16,18 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('strava')->group(function () {
+Route::group(
+    ['middleware' => ['auth']], 
+    function() {
+        Route::resource('roles','RoleController');
+        Route::resource('users','UserController');
+    }
+);
+
+Route::prefix('strava')->group(
+    function () {
         Route::get('/', 'Strava\StravaController@index');
-    });
+    }
+);
 
 

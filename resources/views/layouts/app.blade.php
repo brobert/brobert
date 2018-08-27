@@ -28,10 +28,14 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 @auth
-                <a class="navbar-brand" href="{{ url('/strava') }}">
-                    Strava
-                </a>
+                    <a class="navbar-brand" href="{{ url('/strava') }}"> Strava</a>
                 @endauth
+                @can('user-list')
+                    <a class="navbar-brand" href="{{ url('/users') }}"> Users</a>
+                @endcan
+                @can('role-list')
+                    <a class="navbar-brand" href="{{ url('roles') }}"> Roles</a>
+                @endcan
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
