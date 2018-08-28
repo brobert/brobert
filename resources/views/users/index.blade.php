@@ -24,7 +24,8 @@
 
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped table-hover">
+            <thead>
              <tr>
                <th>No</th>
                <th>Name</th>
@@ -32,6 +33,7 @@
                <th>Roles</th>
                <th width="280px">Action</th>
              </tr>
+             </thead>
              @foreach ($data as $key => $user)
               <tr>
                 <td>{{ ++$i }}</td>
@@ -45,12 +47,12 @@
                   @endif
                 </td>
                 <td>
-                   <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-                   <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+                   <a class="btn btn-sm btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
+                   <a class="btn btn-sm btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
 
 
                     {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-sm btn-danger']) !!}
                     {!! Form::close() !!}
                 </td>
               </tr>
