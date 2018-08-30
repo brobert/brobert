@@ -1,22 +1,21 @@
 <?php
-
-return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Default Session Driver
-    |--------------------------------------------------------------------------
-    |
-    | This option controls the default session "driver" that will be used on
-    | requests. By default, we will use the lightweight native driver but
-    | you may specify any of the other wonderful drivers provided here.
-    |
-    | Supported: "file", "cookie", "database", "apc",
-    |            "memcached", "redis", "array"
-    |
-    */
-
-    'driver' => env('SESSION_DRIVER', 'file'),
+return [ 
+                
+                /*
+                 * |--------------------------------------------------------------------------
+                 * | Default Session Driver
+                 * |--------------------------------------------------------------------------
+                 * |
+                 * | This option controls the default session "driver" that will be used on
+                 * | requests. By default, we will use the lightweight native driver but
+                 * | you may specify any of the other wonderful drivers provided here.
+                 * |
+                 * | Supported: "file", "cookie", "database", "apc",
+                 * | "memcached", "redis", "array"
+                 * |
+                 */
+                
+                'driver' => env ( 'SESSION_DRIVER', 'file' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,9 +28,9 @@ return [
     |
     */
 
-    'lifetime' => env('SESSION_LIFETIME', 120),
-
-    'expire_on_close' => false,
+    'lifetime' => env ( 'SESSION_LIFETIME', 120 ),
+                
+                'expire_on_close' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +56,7 @@ return [
     |
     */
 
-    'files' => storage_path('framework/sessions'),
+    'files' => storage_path ( 'framework/sessions' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +108,10 @@ return [
     |
     */
 
-    'lottery' => [2, 100],
+    'lottery' => [ 
+                                2,
+                                100 
+                ],
 
     /*
     |--------------------------------------------------------------------------
@@ -122,10 +124,7 @@ return [
     |
     */
 
-    'cookie' => env(
-        'SESSION_COOKIE',
-        str_slug(env('APP_NAME', 'laravel'), '_').'_session'
-    ),
+    'cookie' => env ( 'SESSION_COOKIE', str_slug ( env ( 'APP_NAME', 'laravel' ), '_' ) . '_session' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +150,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', null),
+    'domain' => env ( 'SESSION_DOMAIN', null ),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,7 +163,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE', false),
+    'secure' => env ( 'SESSION_SECURE_COOKIE', false ),
 
     /*
     |--------------------------------------------------------------------------
@@ -192,6 +191,6 @@ return [
     |
     */
 
-    'same_site' => null,
+    'same_site' => null 
 
 ];
